@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int indexOf(const char *str, const char *substr) {
+    char *pos = strstr(str, substr);
+    if (pos != NULL) {
+        return pos - str; 
+    }
+    return -1; 
+}
+
+int main() {
+    const char sentence[] = "The cat is on the table";
+    const char word[] = "cat";
+    
+    int position = indexOf(sentence, word);
+    
+    if (position != -1) {
+        printf("Слово \"%s\" найдено на позиции %d\n", word, position);
+    } else {
+        printf("Слово \"%s\" не найдено в предложении\n", word);
+    }
+    
+    return 0;
+}
